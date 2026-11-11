@@ -1,0 +1,487 @@
+:root {
+    --azul: #1769aa;
+    --azul-escuro: #104c80;
+    --azul-claro: #eaf4fc;
+    --escuro: #17212b;
+    --cinza: #64748b;
+    --borda: #dce5ed;
+    --branco: #ffffff;
+    --fundo: #f4f8fc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--fundo);
+    color: var(--escuro);
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
+.cabecalho {
+    background: var(--branco);
+    border-bottom: 1px solid var(--borda);
+    padding: 18px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.marca h1 {
+    color: var(--azul-escuro);
+    font-size: 27px;
+}
+
+.simbolo {
+    width: 42px;
+    height: 42px;
+    background: var(--azul);
+    color: white;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+#formulario-pesquisa {
+    display: flex;
+    gap: 8px;
+    width: min(550px, 65%);
+}
+
+#campo-pesquisa {
+    flex: 1;
+    min-width: 0;
+    padding: 12px 15px;
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    outline: none;
+}
+
+#campo-pesquisa:focus {
+    border-color: var(--azul);
+}
+
+.botao-pesquisar,
+.botao-limpar {
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.botao-pesquisar {
+    background: var(--azul);
+    color: white;
+}
+
+.botao-pesquisar:hover,
+.botao-teclado-pesquisar:hover {
+    background: var(--azul-escuro);
+}
+
+.botao-limpar {
+    background: #e8edf2;
+    color: var(--escuro);
+}
+
+.conteudo {
+    width: 92%;
+    max-width: 1450px;
+    margin: 30px auto;
+}
+
+#painel-mensagem {
+    display: none;
+    padding: 13px;
+    margin-bottom: 18px;
+    border-radius: 8px;
+    background: #fff0f0;
+    color: #b42318;
+    text-align: center;
+}
+
+.painel-inicial {
+    background: white;
+    border: 1px solid var(--borda);
+    border-radius: 14px;
+    padding: 45px 20px;
+    text-align: center;
+}
+
+.icone-inicial {
+    margin: 0 auto 15px;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: var(--azul-claro);
+    color: var(--azul);
+    display: grid;
+    place-items: center;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.painel-inicial h2 {
+    margin-bottom: 10px;
+}
+
+.painel-inicial p {
+    color: var(--cinza);
+    line-height: 1.5;
+}
+
+.area-principal {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 20px;
+    align-items: start;
+}
+
+.ficha-pokemon {
+    display: grid;
+    grid-template-columns: 0.9fr 1.5fr;
+    gap: 20px;
+    min-width: 0;
+}
+
+.painel-imagem,
+.painel-informacoes,
+.area-teclado {
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 14px;
+    padding: 22px;
+}
+
+.painel-imagem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#numero-pokemon {
+    align-self: flex-start;
+    color: var(--cinza);
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#botao-brilhante {
+    align-self: flex-end;
+    background: #fff5d9;
+    color: #a66b00;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-top: -25px;
+}
+
+#botao-brilhante.ativo {
+    background: #ffe29a;
+}
+
+#imagem-pokemon {
+    width: 100%;
+    max-width: 300px;
+    height: 280px;
+    object-fit: contain;
+    margin: 15px auto;
+    cursor: pointer;
+}
+
+.botoes-genero {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+    margin: 8px 0 20px;
+}
+
+.botao-genero {
+    background: #edf2f7;
+    color: var(--escuro);
+    padding: 10px 17px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.botao-genero.ativo {
+    background: var(--azul);
+    color: white;
+}
+
+.navegacao {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+    width: 100%;
+}
+
+.navegacao button {
+    padding: 10px 5px;
+    border-radius: 7px;
+    background: var(--azul-claro);
+    color: var(--azul-escuro);
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.navegacao button:hover {
+    background: #d5e9fa;
+}
+
+.painel-informacoes h2 {
+    font-size: 30px;
+    text-transform: capitalize;
+    margin-bottom: 15px;
+}
+
+.tipos-pokemon {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 25px;
+}
+
+.tipo {
+    color: white;
+    padding: 7px 15px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.titulo-secao {
+    font-size: 18px;
+    margin: 20px 0 13px;
+    color: var(--azul-escuro);
+}
+
+.informacoes-basicas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.informacao {
+    background: var(--azul-claro);
+    padding: 15px 10px;
+    border-radius: 9px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.informacao span {
+    color: var(--cinza);
+    font-size: 13px;
+}
+
+.informacao strong {
+    font-size: 15px;
+    overflow-wrap: anywhere;
+}
+
+.estatisticas {
+    margin-top: 20px;
+}
+
+.estatistica {
+    display: grid;
+    grid-template-columns: 105px 1fr 35px;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 13px;
+}
+
+.nome-estatistica {
+    font-size: 13px;
+    color: var(--cinza);
+}
+
+.barra-estatistica {
+    height: 9px;
+    background: #e9eef3;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progresso-estatistica {
+    height: 100%;
+    background: var(--azul);
+    border-radius: 10px;
+}
+
+.valor-estatistica {
+    font-size: 13px;
+    font-weight: bold;
+    text-align: right;
+}
+
+.area-teclado {
+    position: sticky;
+    top: 20px;
+}
+
+.area-teclado h2 {
+    font-size: 19px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--azul-escuro);
+}
+
+.teclado {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.teclado button {
+    min-height: 65px;
+    border-radius: 9px;
+    background: #edf4fa;
+    color: var(--azul-escuro);
+    font-size: 21px;
+    font-weight: bold;
+    border: 1px solid var(--borda);
+}
+
+.teclado button:hover {
+    background: #d8eafa;
+}
+
+.botao-teclado-pesquisar {
+    width: 100%;
+    padding: 14px;
+    margin-top: 15px;
+    background: var(--azul);
+    color: white;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.rodape {
+    width: 100%;
+    margin-top: 50px;
+    padding: 25px 15px;
+    background: var(--azul-escuro);
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.rodape p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.rodape span {
+    font-size: 13px;
+    color: #dceafa;
+}
+
+@media (max-width: 550px) {
+    .rodape {
+        margin-top: 30px;
+        padding: 22px 12px;
+    }
+
+    .rodape span {
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 1100px) {
+    .area-principal {
+        grid-template-columns: minmax(0, 1fr) 260px;
+    }
+
+    .ficha-pokemon {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 800px) {
+    .cabecalho {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #formulario-pesquisa {
+        width: 100%;
+    }
+
+    .area-principal {
+        grid-template-columns: 1fr;
+    }
+
+    .ficha-pokemon {
+        grid-template-columns: 0.9fr 1.1fr;
+    }
+
+    .area-teclado {
+        position: static;
+        max-width: 400px;
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 550px) {
+    .conteudo {
+        width: 94%;
+        margin-top: 18px;
+    }
+
+    #formulario-pesquisa {
+        flex-wrap: wrap;
+    }
+
+    #campo-pesquisa {
+        flex-basis: 100%;
+    }
+
+    .ficha-pokemon {
+        grid-template-columns: 1fr;
+    }
+
+    #imagem-pokemon {
+        height: 250px;
+    }
+
+    .informacoes-basicas {
+        grid-template-columns: 1fr;
+    }
+
+    .painel-informacoes,
+    .painel-imagem {
+        padding: 17px;
+    }
+}

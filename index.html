@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="cabecalho">
+        <div class="marca">
+            <div class="simbolo">P</div>
+            <h1>Pokédex</h1>
+        </div>
+
+        <form id="formulario-pesquisa">
+            <input
+                type="text"
+                id="campo-pesquisa"
+                placeholder="Digite o nome ou número..."
+                autocomplete="off"
+            >
+            <button type="submit" class="botao-pesquisar">Pesquisar</button>
+            <button type="button" id="botao-limpar" class="botao-limpar">Limpar</button>
+        </form>
+    </header>
+
+    <main class="conteudo">
+
+        <div id="painel-mensagem">
+            <p id="mensagem"></p>
+        </div>
+
+        <section id="painel-inicial" class="painel-inicial">
+            <div class="icone-inicial">?</div>
+            <h2>Bem-vindo à Pokédex</h2>
+            <p>Pesquise um Pokémon pelo nome ou número para visualizar suas informações.</p>
+        </section>
+
+        <div class="area-principal">
+
+            <section id="ficha-pokemon" class="ficha-pokemon">
+
+                <div class="painel-imagem">
+                    <span id="numero-pokemon">Nº 000</span>
+
+                    <button id="botao-brilhante" type="button">
+                        ✦ Shiny
+                    </button>
+
+                    <img
+                        id="imagem-pokemon"
+                        src=""
+                        alt="Imagem do Pokémon"
+                    >
+
+                    <div class="botoes-genero">
+                        <button id="botao-macho" class="botao-genero ativo" type="button">
+                            ♂ Macho
+                        </button>
+
+                        <button id="botao-femea" class="botao-genero" type="button">
+                            ♀ Fêmea
+                        </button>
+                    </div>
+
+                    <div class="navegacao">
+                        <button id="botao-voltar-dez" type="button">-10</button>
+                        <button id="botao-anterior" type="button">Anterior</button>
+                        <button id="botao-proximo" type="button">Próximo</button>
+                        <button id="botao-avancar-dez" type="button">+10</button>
+                    </div>
+                </div>
+
+                <div class="painel-informacoes">
+                    <h2 id="nome-pokemon">Nome do Pokémon</h2>
+
+                    <div id="tipos-pokemon" class="tipos-pokemon"></div>
+
+                    <h3 class="titulo-secao">Informações</h3>
+
+                    <div class="informacoes-basicas">
+                        <div class="informacao">
+                            <span>Altura</span>
+                            <strong id="altura-pokemon">--</strong>
+                        </div>
+
+                        <div class="informacao">
+                            <span>Peso</span>
+                            <strong id="peso-pokemon">--</strong>
+                        </div>
+
+                        <div class="informacao">
+                            <span>Região</span>
+                            <strong id="regiao-pokemon">--</strong>
+                        </div>
+                    </div>
+
+                    <section class="estatisticas">
+                        <h3 class="titulo-secao">Estatísticas</h3>
+                        <div id="lista-estatisticas"></div>
+                    </section>
+                </div>
+
+            </section>
+
+            <aside class="area-teclado">
+                <h2>Teclado numérico</h2>
+
+                <div class="teclado">
+                    <button type="button" data-numero="1">1</button>
+                    <button type="button" data-numero="2">2</button>
+                    <button type="button" data-numero="3">3</button>
+
+                    <button type="button" data-numero="4">4</button>
+                    <button type="button" data-numero="5">5</button>
+                    <button type="button" data-numero="6">6</button>
+
+                    <button type="button" data-numero="7">7</button>
+                    <button type="button" data-numero="8">8</button>
+                    <button type="button" data-numero="9">9</button>
+
+                    <button type="button" data-acao="limpar">C</button>
+                    <button type="button" data-numero="0">0</button>
+                    <button type="button" data-acao="apagar">⌫</button>
+                </div>
+
+                <button
+                    type="button"
+                    id="botao-pesquisar-teclado"
+                    class="botao-teclado-pesquisar"
+                >
+                    Buscar Pokémon
+                </button>
+            </aside>
+
+        </div>
+
+    </main>
+
+<footer class="rodape">
+    <p>Pokédex</p>
+    <span>Todos os direitos reservados • Informações fornecidas pela PokéAPI</span>
+</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
